@@ -1,0 +1,14 @@
+server:
+  port: ${SERVER_PORT:8081}
+
+spring:
+  application:
+    name: driver-service
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.application.name}:${server.port}
